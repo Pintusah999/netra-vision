@@ -1,0 +1,6 @@
+{
+  "name": "NetraVision - AI Smart Access Control System",
+  "description": "Centralized security intelligence and access-management platform for monitoring identities, authentication activity, physical access operations, security events, connected access points, analytics, and reports.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

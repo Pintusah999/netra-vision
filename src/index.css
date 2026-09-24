@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+    /* Light Theme Tokens */
+    --bg-primary: #F8FAFC;
+    --bg-secondary: #F1F5F9;
+    --card-surface: #FFFFFF;
+    --surface-elevated: #F8FAFC;
+    --sidebar-bg: #0B1220;
+    --primary-brand: #F97316;
+    --primary-brand-hover: #EA580C;
+    --text-primary: #0F172A;
+    --text-secondary: #334155;
+    --text-muted: #64748B;
+    --border-subtle: #E2E8F0;
+    --border-card: #E2E8F0;
+    --status-success: #16A34A;
+    --status-warning: #D97706;
+    --status-danger: #DC2626;
+    --status-info: #0284C7;
+  }
+
+  html.dark {
+    /* Dark Theme Tokens (Primary default) */
+    --bg-primary: #05070D;
+    --bg-secondary: #0A0E18;
+    --card-surface: rgba(14, 20, 32, 0.75);
+    --surface-elevated: #121A2B;
+    --sidebar-bg: #050810;
+    --primary-brand: #FF6B00;
+    --primary-brand-hover: #EA580C;
+    --text-primary: #F8FAFC;
+    --text-secondary: #CBD5E1;
+    --text-muted: #8E9DB2;
+    --border-subtle: #192335;
+    --border-card: rgba(35, 49, 74, 0.6);
+    --status-success: #22C55E;
+    --status-warning: #F59E0B;
+    --status-danger: #EF4444;
+    --status-info: #38BDF8;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+}
+
+/* Custom scrollbars for data tables and logs */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.4);
+}
+
+/* Pulsing radar for live indicators */
+@keyframes live-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.15); }
+}
+
+.animate-live-dot {
+  animation: live-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Translucent dark glass styling so corner orange gradient wave shines through cleanly */
+html.dark .bg-\[\#172033\] {
+  background-color: rgba(13, 19, 34, 0.78) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-color: rgba(28, 40, 62, 0.7) !important;
+}
+
+html.dark .bg-\[\#111827\] {
+  background-color: rgba(9, 14, 25, 0.82) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-color: rgba(28, 40, 62, 0.7) !important;
+}
+
+html.dark .border-\[\#263449\] {
+  border-color: rgba(28, 40, 62, 0.65) !important;
+}
+
+html.dark .hover\:bg-\[\#1E293B\]:hover,
+html.dark .hover\:bg-\[\#1E293B\]\/70:hover {
+  background-color: rgba(20, 30, 52, 0.85) !important;
+}
+
+/* Tablet corner ambient glow enhancement */
+.orange-corner-glow {
+  box-shadow: 0 0 50px -10px rgba(255, 107, 0, 0.35);
+}
+
